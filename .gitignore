@@ -4,3 +4,6 @@
 *.xml
 .idea/vcs.xml
 .idea/vcs.xml
+.DS_Store
+/.idea
+*.pyc
