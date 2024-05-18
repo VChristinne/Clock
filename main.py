@@ -1,14 +1,15 @@
 import clock_setup
+from colorama import Fore
 
 def main():
-    print(clock_setup.get_current_time())
+    clock_setup.get_current_time()
 
     alarm = clock_setup.set_alarm()
-    print(alarm)
+    print(Fore.RED + f"\nAlarm set to: {alarm}" + Fore.RESET)
 
     while True:
         if clock_setup.check_alarm(alarm):
-            print("Alarm!")
+            print("\nAlarm!")
             break
 
 if __name__ == '__main__':
