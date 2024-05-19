@@ -1,5 +1,6 @@
 from colorama import Fore
 import datetime
+from time import sleep
 
 def get_current_time():
     return datetime.datetime.now().strftime("%H:%M:%S")
