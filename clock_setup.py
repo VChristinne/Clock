@@ -5,24 +5,12 @@ def get_current_time():
     return datetime.datetime.now().strftime("%H:%M:%S")
 
 def set_alarm():
-    alarm_type = input(Fore.BLUE + "> Set alarm by (1) Exact date or (2) Days from now: " + Fore.RESET)
-    if alarm_type == "1":
-        alarm_input = input("Enter date and time (dd/mm hh:mm): ")
-        date, time = alarm_input.split()
-        day, month = date.split('/')
-        hour, minute = time.split(':')
-        year = datetime.datetime.now().year
-        alarm = datetime.datetime(year, int(month), int(day), int(hour), int(minute))
-    elif alarm_type == "2":
-        days_from_now = int(input(Fore.BLUE + "> Days from now: " + Fore.RESET))
-        time = input("Enter time (hh:mm): ")
-        hour, minute = time.split(':')
-        current_time = datetime.datetime.now()
-        alarm = current_time + datetime.timedelta(days=days_from_now)
-        alarm = alarm.replace(hour=int(hour), minute=int(minute), second=0, microsecond=0)
-    else:
-        print("Invalid option. Please choose 1 or 2.")
-        return None
+    alarm_input = input(Fore.BLUE + "> Set alarm (dd/mm hh:mm): " + Fore.RESET)
+    date, time = alarm_input.split()
+    day, month = date.split('/')
+    hour, minute = time.split(':')
+    year = datetime.datetime.now().year
+    alarm = datetime.datetime(year, int(month), int(day), int(hour), int(minute))
     return alarm
 
 def check_alarm(alarm):
